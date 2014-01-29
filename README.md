@@ -1,1 +1,1 @@
-A collection of disparate security features for Python.
+A RFC-compliant HOTP and TOTP implementation.
