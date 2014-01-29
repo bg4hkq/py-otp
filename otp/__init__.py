@@ -1,3 +1,4 @@
+import base64
 import hashlib
 import hmac
 import random
@@ -10,11 +11,11 @@ __author__ = 'Terry Chia'
 
 class OTP:
 
-    def generate_secret(self, size_in_bits=160):
+    def generate_secret(self, length=32):
         """Securely generates random secret using the system's CSPRNG.
 
         Keyword arguments:
-        size_in_bits -- Size of random secret to generate (default 160 bits)
+        length -- Size of random secret to generate (default 32 char)
 
         Returns:
         Random secret of specified size securely generated using the system's
@@ -23,7 +24,14 @@ class OTP:
 
         """
         rand = random.SystemRandom()
-        return rand.getrandbits(size_in_bits)
+        chars = base64._b32alphabet.values()
+
+        secret = ''
+
+        for i in xrange(length):
+            secret = secret + rand.choice(chars)
+
+        return secret
 
     def generate_hotp(self, secret, counter, length=6):
         """Generates an HOTP value.
@@ -113,7 +121,7 @@ class OTP:
             validity = True
 
         if self.generate_totp(secret, time+30, length) == totp:
-            validtiy = True
+            validity = True
 
         return validity
 
