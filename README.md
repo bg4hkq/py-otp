@@ -1,6 +1,8 @@
 py-otp
 ==========
 
+![](https://travis-ci.org/Ayrx/py-otp.png?branch=develop)
+
 ### Introduction
 
 This library provides an implementation of the HOTP and TOTP algorithms compatible
