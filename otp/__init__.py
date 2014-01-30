@@ -49,7 +49,7 @@ class OTP:
         The generated HOTP value of the specified length.
 
         """
-        secret = base64.b32decode(secret)
+        secret = base64.b32decode(secret, casefold=True)
         HS = hmac.new(secret, struct.pack('>Q', counter), hashlib.sha1).digest()
         sbit = cls._dynamic_truncate(HS)
         return str(sbit % (10**length)).zfill(length)
