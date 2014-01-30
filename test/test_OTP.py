@@ -1,3 +1,4 @@
+import base64
 from unittest import TestCase
 from otp import OTP
 
@@ -6,7 +7,7 @@ __author__ = 'Terry Chia'
 
 class TestOTP(TestCase):
     def setUp(self):
-        self.secret = '12345678901234567890'
+        self.secret = base64.b32encode('12345678901234567890')
 
     def test_generate_hotp(self):
         # Test vectors taken from RFC 4226, Appendix E
