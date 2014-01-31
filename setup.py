@@ -4,7 +4,7 @@ __author__ = 'Terry Chia'
 
 setup(
     name='py-otp',
-    version='1.0',
+    version='1.1',
     description='Google Authenticator compatible HOTP & TOTP Library',
     author='Terry Chia',
     author_email='terrycwk1994@gmail.com',
