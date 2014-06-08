@@ -3,6 +3,10 @@ py-otp
 
 ![](https://travis-ci.org/Ayrx/py-otp.png?branch=develop)
 
+**Warning**: This library should no longer be used as it won't be updated or supported.
+I strongly recommend using the HOTP and TOTP implementation in 
+[cryptography](https://github.com/pyca/cryptography) I wrote instead. 
+
 ### Introduction
 
 This library provides an implementation of the HOTP and TOTP algorithms compatible
